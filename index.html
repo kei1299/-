@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>資産取り崩しシミュレーション</title>
+    <script defer src="script.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+      }
+      .container {
+        max-width: 400px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+      }
+      input,
+      select,
+      button {
+        margin-top: 10px;
+        width: 100%;
+        padding: 8px;
+      }
+      .input-group {
+        text-align: left;
+        margin-bottom: 10px;
+      }
+      .input-group label {
+        display: block;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>資産取り崩しシミュレーション</h1>
+
+    <div class="container">
+      <h2>シミュレーション①: 四半期ごとの取り崩し</h2>
+      <div class="input-group">
+        <label for="currentAsset1">現在の資産:</label>
+        <input type="number" id="currentAsset1" placeholder="現在の資産" />
+      </div>
+      <div class="input-group">
+        <label for="baseAsset1">元の基準資産:</label>
+        <input type="number" id="baseAsset1" placeholder="元の基準資産" />
+      </div>
+      <button onclick="calculateWithdrawal1()">計算する</button>
+      <p id="result1"></p>
+    </div>
+
+    <div class="container">
+      <h2>シミュレーション②: 四半期ごとの取り崩し（月ごと変動あり）</h2>
+      <div class="input-group">
+        <label for="currentAsset2">現在の資産:</label>
+        <input type="number" id="currentAsset2" placeholder="現在の資産" />
+      </div>
+      <div class="input-group">
+        <label for="baseAsset2">元の基準資産:</label>
+        <input type="number" id="baseAsset2" placeholder="元の基準資産" />
+      </div>
+      <div class="input-group">
+        <label for="month">月を選択:</label>
+        <select id="month">
+          <option value="3">3月</option>
+          <option value="6">6月</option>
+          <option value="9">9月</option>
+          <option value="12">12月</option>
+        </select>
+      </div>
+      <button onclick="calculateWithdrawal2()">計算する</button>
+      <p id="result2"></p>
+    </div>
+  </body>
+</html>
